@@ -160,9 +160,10 @@ public class ScanDrawView extends SurfaceView implements SurfaceHolder.Callback 
             clipPath.addRect(x-2,y-2,(float)(x+areaWidth+2),(float)(y+areaWidth+2),Path.Direction.CCW);
             canvas.clipPath(clipPath, Region.Op.DIFFERENCE);
 
+            // 绘制遮罩
             Paint maskPaint = new Paint();
-            final int a = max(0, min(255, (int)floor(0.5 * 256.0)));
-            maskPaint.setColor(Color.argb(a, 0, 0, 0));
+            final int a = max(0, min(255, (int)floor(0.2 * 256.0)));
+            maskPaint.setColor(Color.argb(a, 255, 255, 255)); // 白色
             maskPaint.setStyle(Paint.Style.FILL);
 
             canvas.drawRect(0, 0, (float) vw, (float)vh, maskPaint);
