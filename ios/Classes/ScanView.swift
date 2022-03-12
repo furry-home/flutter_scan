@@ -169,7 +169,7 @@ public class ScanView: UIView,AVCaptureMetadataOutputObjectsDelegate,FlutterPlug
       mask.frame = self.bounds;
       mask.path = rectPath.cgPath;
       mask.fillRule = .evenOdd;
-      mask.fillColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5).cgColor;
+      mask.fillColor = UIColor.init(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.2).cgColor;
       
       self.layer.insertSublayer(mask, above: self.captureLayer);
       // 绘制四个角
